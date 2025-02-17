@@ -106,7 +106,7 @@ function ProfilePageClient({
             <CardContent className='pt-6'>
               <div className='flex flex-col items-center text-center'>
                 <Avatar className='w-24 h-24'>
-                  <AvatarImage src={user.image || ''} />
+                  <AvatarImage src={user.image || '/avatar.png'} />
                 </Avatar>
                 <h1 className='mt-4 text-2xl font-bold'>
                   {user.name ?? user.username}
