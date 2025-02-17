@@ -1,10 +1,6 @@
 'use client';
 
-import {
-  deletePost,
-  getPosts,
-  toggleLike,
-} from '@/actions/post.action';
+import { deletePost, getPosts, toggleLike } from '@/actions/post.action';
 import { SignInButton, useUser } from '@clerk/nextjs';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -72,7 +68,10 @@ function PostCard({ dbUserId, post }: { post: Post; dbUserId: string | null }) {
           <div className='flex space-x-3 sm:space-x-4'>
             <Link href={`/profile/${post.author.username}`}>
               <Avatar className='size-8 sm:w-10 sm:h-10'>
-                <AvatarImage src={post.author.image || '/avatar.png'} />
+                <AvatarImage
+                  src={post.author.image || '/avatar.png'}
+                  alt='Avatar image'
+                />
               </Avatar>
             </Link>
 
@@ -165,7 +164,9 @@ function PostCard({ dbUserId, post }: { post: Post; dbUserId: string | null }) {
             </Button>
           </div>
 
-          {showComments && <CommentsSection comments={post.comments} postId={post.id} />}
+          {showComments && (
+            <CommentsSection comments={post.comments} postId={post.id} />
+          )}
         </div>
       </CardContent>
     </Card>

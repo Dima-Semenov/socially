@@ -50,7 +50,10 @@ function CreatePost() {
         <div className='space-y-4'>
           <div className='space-x-4 flex'>
             <Avatar className='w-10 h-10'>
-              <AvatarImage src={user.imageUrl || '/avatar.png'} />
+              <AvatarImage
+                src={user.imageUrl || '/avatar.png'}
+                alt='Avatar image'
+              />
             </Avatar>
 
             <Textarea
@@ -84,7 +87,7 @@ function CreatePost() {
                 variant='ghost'
                 size='sm'
                 disabled={isPosting}
-                onClick={() => setShowImageUpload(prev => !prev)}
+                onClick={() => setShowImageUpload((prev) => !prev)}
                 className='text-muted-foreground hover:text-primary'
               >
                 <ImageIcon className='size-4 mr-2' />

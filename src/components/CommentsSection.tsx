@@ -57,7 +57,10 @@ function CommentsSection({ comments, postId }: CommentsSectionProps) {
           {comments.map((comment) => (
             <div key={comment.id} className='flex space-x-3'>
               <Avatar className='size-8 flex-shrink-0'>
-                <AvatarImage src={comment.author.image ?? '/avatar.png'} />
+                <AvatarImage
+                  src={comment.author.image ?? '/avatar.png'}
+                  alt='Avatar image'
+                />
               </Avatar>
 
               <div className='flex-1 min-w-0'>
@@ -83,7 +86,10 @@ function CommentsSection({ comments, postId }: CommentsSectionProps) {
       {user ? (
         <div className='flex space-x-3'>
           <Avatar className='size-8 flex-shrink-0'>
-            <AvatarImage src={user.imageUrl ?? '/avatar.png'} />
+            <AvatarImage
+              src={user.imageUrl ?? '/avatar.png'}
+              alt='Avatar image'
+            />
           </Avatar>
           <div className='flex-1'>
             <Textarea

@@ -82,7 +82,10 @@ function NotificationsPage() {
                   }`}
                 >
                   <Avatar className='mt-1'>
-                    <AvatarImage src={notification.creator.image || '/avatar.png'} />
+                    <AvatarImage
+                      src={notification.creator.image || '/avatar.png'}
+                      alt='Avatar image'
+                    />
                   </Avatar>
                   <div className='flex-1 space-y-2'>
                     <div className='flex items-center gap-2'>
